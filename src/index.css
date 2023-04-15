@@ -13,6 +13,10 @@ body {
   background: #e6e6e6;
 }
 
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

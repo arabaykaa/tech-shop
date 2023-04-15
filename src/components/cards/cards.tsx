@@ -1,23 +1,33 @@
-import { Box, Button } from '@mui/material'
+import { Box, Button, Paper, Typography } from '@mui/material'
 import React from 'react'
 
-export const Cards = () => {
+interface IProps {
+    images: string;
+    title: string;
+}
+
+export const Cards = ({ images, title }: IProps) => {
     return (
-        <Box sx={{
-            width: { xs: "160px", sm: "260px" }, display: "flex", flexDirection: "column",
-            height: "330px", gap: "30px", background: "yellow"
+        <Paper sx={{
+            display: "flex", flexDirection: "column", height: "370px", background: "rgba(0, 0, 0, 0.2)", borderRadius: "12px"
         }}>
-            <Box>
-                <img src="/" alt="techPhoto" />
+            <Box sx={{ flexGrow: "1" }}>
+                <img src={images} alt="techPhoto" style={{ clipPath: "none" }} />
             </Box>
-            <Box>
-                <Button>
+            <Typography sx={{
+                minHeight: "50px", display: "flex",
+                justifyContent: "center", alignItems: "center", fontSize: "20px"
+            }}>
+                {title}
+            </Typography>
+            <Box sx={{ minHeight: "70px", background: "rgba(255, 255, 255, 0.5)" }}>
+                <Button sx={{ width: "50%", height: "100%", borderRadius: "0 0 0 12px" }}>
                     more
                 </Button>
-                <Button>
+                <Button sx={{ width: "50%", height: "100%", borderRadius: "0 0 12px 0" }}>
                     buy
                 </Button>
             </Box>
-        </Box>
+        </Paper>
     )
 }

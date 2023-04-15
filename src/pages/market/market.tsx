@@ -1,11 +1,11 @@
 import React from 'react'
-import { Cards } from '../../components'
 import { Box } from '@mui/material'
+import { MarketStore } from '../../widgets'
 
 export const Market = () => {
     return (
         <Box>
-            <Cards />
+            <MarketStore />
         </Box>
     )
 }

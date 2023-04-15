@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import { Basket, Main, NotFound, Market } from './pages';
-import { Footer, Header } from './components';
+import { Footer, Header } from './widgets';
 import { Box } from '@mui/material';
 
 function App() {

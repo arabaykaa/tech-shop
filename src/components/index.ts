@@ -1,3 +1,3 @@
-export { Header } from "./header/header";
-export { Footer } from "./footer/footer";
 export { Cards } from "./cards/cards";
+export { HeaderContainer } from "./header/index";
+export { FooterContainer } from "./footer/index";
