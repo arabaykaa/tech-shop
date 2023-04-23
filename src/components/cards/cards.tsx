@@ -12,7 +12,7 @@ export const Cards = ({ images, title }: IProps) => {
             display: "flex", flexDirection: "column", height: "370px", background: "rgba(0, 0, 0, 0.2)", borderRadius: "12px"
         }}>
             <Box sx={{ flexGrow: "1" }}>
-                <img src={images} alt="techPhoto" style={{ clipPath: "none" }} />
+                <img src={images} alt="techPhoto" style={{ clipPath: "none", borderRadius: "12px" }} />
             </Box>
             <Typography sx={{
                 minHeight: "50px", display: "flex",

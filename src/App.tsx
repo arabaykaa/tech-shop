@@ -1,29 +1,21 @@
 import React from 'react';
-import { Outlet, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
-import { Basket, Main, NotFound, Market } from './pages';
+import { Route, Routes } from 'react-router-dom';
+import { Main } from './pages';
 import { Footer, Header } from './widgets';
 import { Box } from '@mui/material';
+import { ROUTES } from './route-config';
 
 function App() {
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<Root />}>
-        <Route index element={<Main />} />
-        <Route path="/shop" element={<Basket />} />
-        <Route path="/market" element={<Market />} />
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    )
-  )
-  return (<RouterProvider router={router} />);
-}
-
-const Root = () => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100dvh" }}>
       <Header />
       <Box sx={{ flexGrow: "1", margin: { xs: "8rem 1rem", sm: "8rem 4rem" } }}>
-        <Outlet />
+        <Routes>
+          <Route index element={<Main />} />
+          {ROUTES.map((pages) => (
+            <Route key={pages.id} path={pages.path} element={pages.page} />
+          ))}
+        </Routes>
       </Box>
       <Footer />
     </Box>
